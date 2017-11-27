@@ -15,8 +15,6 @@ private:
 	ItemType hashTable[];
 public:
 	HashedDictionary();
-	HashedDictionary(int hTableSize);
-	HashedDictionary(const KeyType& searchKey, const ItemType& newItem);
 	bool add(const KeyType& searchKey, const ItemType& newItem);
 	bool remove(const KeyType& searchKey);
 	int getTableSize();

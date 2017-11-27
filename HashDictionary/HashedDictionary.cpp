@@ -10,26 +10,12 @@ using namespace std;
 template<class KeyType, class ItemType>
 HashedDictionary<KeyType, ItemType>::HashedDictionary()
 {
+	hashTable = new HashedEntry<KeyType, ItemType>*[20];
 	for (int i = 0; i < tableSize; i++)
 		hashTable[i] = nullptr;
 	tableSize = -1;
 }
 
-template<class KeyType, class ItemType>
-HashedDictionary<KeyType, ItemType>::HashedDictionary(int hTableSize)
-{
-	for (int i = 0; i < tableSize; i++)
-		hashTable[i] = nullptr;
-	tableSize = hTableSize;
-}
-
-template<class KeyType, class ItemType>
-HashedDictionary<KeyType, ItemType>::HashedDictionary(const KeyType & searchKey, const ItemType & newItem)
-{
-	for (int i = 0; i < tableSize; i++)
-		hashTable[i] = nullptr;
-	tableSize = -1;
-}
 
 template <class KeyType, class ItemType>
 bool HashedDictionary<KeyType, ItemType>::add(const KeyType& searchKey, const ItemType& newItem)
