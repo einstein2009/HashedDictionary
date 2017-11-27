@@ -4,7 +4,7 @@
 /** @file  HashedDictionary.cpp */
 
 #include "HashedDictionary.h"
-
+#include <string>
 using namespace std;
 
 template<class KeyType, class ItemType>
@@ -113,9 +113,21 @@ void HashedDictionary<KeyType, ItemType>::setTableSize(int size)
 }
 
 template<class KeyType, class ItemType>
+int HashedDictionary<KeyType, ItemType>::getStringNum(string s)
+{
+	int value = 0;
+	for (unsigned int i = 0; i < s.length(); i++)
+	{
+		char c = s[i];
+		value += c;
+	}
+	return value;
+}
+
+template<class KeyType, class ItemType>
 int HashedDictionary<KeyType, ItemType>::getHashIndex(const KeyType& searchKey)
 {
-	int hashIndex = searchKey % tableSize;
+	int hashIndex = getStringNum(searchKey) % tableSize;
 	if (hashTable < 0)
 		hashIndex = hashIndex + tableSize;
 	return hashIndex;

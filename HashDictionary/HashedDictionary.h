@@ -2,6 +2,9 @@
 #define _HASHED_DICTIONARY
 
 #include "HashedEntry.h"
+#include <string>
+
+using namespace std;
 
 template <class KeyType, class ItemType>
 class HashedDictionary : public HashedEntry<KeyType, ItemType>
@@ -18,6 +21,7 @@ public:
 	bool remove(const KeyType& searchKey);
 	int getTableSize();
 	void setTableSize(int size);
+	int getStringNum(string s);
 	int getHashIndex(const KeyType& searchKey);
 };
 #endif // !_HASHED_DICTIONARY
