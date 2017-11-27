@@ -12,7 +12,8 @@ inline HashedEntry<KeyType, ItemType>::HashedEntry(ItemType newEntry, KeyType se
 }
 
 template<class KeyType, class ItemType>
-inline HashedEntry<KeyType, ItemType>::HashedEntry(ItemType newEntry, KeyType searchKey, HashedEntry<KeyType, ItemType>* nextEntryPtr)
+inline HashedEntry<KeyType, ItemType>::
+HashedEntry(ItemType newEntry, KeyType searchKey, HashedEntry<KeyType, ItemType>* nextEntryPtr)
 {
 }
 

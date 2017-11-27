@@ -10,7 +10,6 @@ using namespace std;
 template<class KeyType, class ItemType>
 HashedDictionary<KeyType, ItemType>::HashedDictionary()
 {
-	hashTable[] = new HashedDictionary<KeyType, ItemType>(20);  //small number, for testing
 	for (int i = 0; i < tableSize; i++)
 		hashTable[i] = nullptr;
 	tableSize = -1;
@@ -19,7 +18,6 @@ HashedDictionary<KeyType, ItemType>::HashedDictionary()
 template<class KeyType, class ItemType>
 HashedDictionary<KeyType, ItemType>::HashedDictionary(int hTableSize)
 {
-	hashTable[] = new HashedDictionary<KeyType, ItemType>(hTableSize);
 	for (int i = 0; i < tableSize; i++)
 		hashTable[i] = nullptr;
 	tableSize = hTableSize;
@@ -28,7 +26,6 @@ HashedDictionary<KeyType, ItemType>::HashedDictionary(int hTableSize)
 template<class KeyType, class ItemType>
 HashedDictionary<KeyType, ItemType>::HashedDictionary(const KeyType & searchKey, const ItemType & newItem)
 {
-	hashTable[] = new HashedDictionary<KeyType, ItemType>(20);  //small number, for testing
 	for (int i = 0; i < tableSize; i++)
 		hashTable[i] = nullptr;
 	tableSize = -1;
@@ -118,7 +115,7 @@ void HashedDictionary<KeyType, ItemType>::setTableSize(int size)
 template<class KeyType, class ItemType>
 int HashedDictionary<KeyType, ItemType>::getHashIndex(const KeyType& searchKey)
 {
-	int hashIndex = getHashIndex(searchKey) % tableSize;
+	int hashIndex = searchKey % tableSize;
 	if (hashTable < 0)
 		hashIndex = hashIndex + tableSize;
 	return hashIndex;
