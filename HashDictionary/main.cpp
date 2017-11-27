@@ -19,7 +19,9 @@ int main()
 
 	if (searchOrAdd == 'S' || searchOrAdd == 's')
 	{
-
+		cout << "What entry are you looking for?" << endl;
+		cin >> entry;
+		
 	}
 	else if (searchOrAdd == 'A' || searchOrAdd == 'a')
 	{

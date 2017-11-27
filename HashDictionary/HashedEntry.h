@@ -26,5 +26,5 @@ public:
    void setNext(HashedEntry<KeyType, ItemType>* nextEntryPtr);
    HashedEntry<KeyType, ItemType>* getNext() const;
 }; // end HashedEntry
-
+#include "HashedEntry.cpp"
 #endif

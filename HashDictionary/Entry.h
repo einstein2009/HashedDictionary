@@ -30,5 +30,5 @@ public:
    bool operator==(const Entry<KeyType, ItemType>& rightHandItem) const;
    bool operator>(const Entry<KeyType, ItemType>& rightHandItem) const;
 }; // end Entry
-
+#include "Entry.cpp"
 #endif

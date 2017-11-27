@@ -24,4 +24,6 @@ public:
 	int getStringNum(string s);
 	int getHashIndex(const KeyType& searchKey);
 };
+
+#include "HashedDictionary.cpp"
 #endif // !_HASHED_DICTIONARY
